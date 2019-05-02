@@ -1,0 +1,11 @@
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/Server.deps.json
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/Server.runtimeconfig.json
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/Server.runtimeconfig.dev.json
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/Server.dll
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/Server.pdb
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/Server.csprojAssemblyReference.cache
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/Server.csproj.CoreCompileInputs.cache
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/Server.AssemblyInfoInputs.cache
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/Server.AssemblyInfo.cs
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/Server.dll
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/Server.pdb

@@ -1,0 +1,11 @@
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/CentralServer.deps.json
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/CentralServer.runtimeconfig.json
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/CentralServer.runtimeconfig.dev.json
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/CentralServer.dll
+/home/max/Documents/dotnet/Server/src/Server/bin/Debug/netcoreapp2.2/CentralServer.pdb
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/CentralServer.csprojAssemblyReference.cache
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/CentralServer.csproj.CoreCompileInputs.cache
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/CentralServer.AssemblyInfoInputs.cache
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/CentralServer.AssemblyInfo.cs
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/CentralServer.dll
+/home/max/Documents/dotnet/Server/src/Server/obj/Debug/netcoreapp2.2/CentralServer.pdb

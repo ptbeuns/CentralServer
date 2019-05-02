@@ -1,0 +1,17 @@
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/xunit.runner.reporters.netcoreapp10.dll
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/xunit.runner.utility.netcoreapp10.dll
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/ServerTest.deps.json
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/ServerTest.runtimeconfig.json
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/ServerTest.runtimeconfig.dev.json
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/ServerTest.dll
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/ServerTest.pdb
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.csprojAssemblyReference.cache
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.csproj.CoreCompileInputs.cache
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.AssemblyInfoInputs.cache
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.AssemblyInfo.cs
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.csproj.CopyComplete
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.dll
+/home/max/Documents/dotnet/Server/test/ServerTest/obj/Debug/netcoreapp2.2/ServerTest.pdb
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/CentralServer.dll
+/home/max/Documents/dotnet/Server/test/ServerTest/bin/Debug/netcoreapp2.2/CentralServer.pdb
