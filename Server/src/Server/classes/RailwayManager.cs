@@ -39,13 +39,11 @@ namespace CentralServer
 
             if (railwayObjectType == "Train")
             {
-                //TODO make train
-                //trainManager.MakeTrain(socket);
+                trainManager.MakeTrain(socket);
             }
             else if (railwayObjectType == "Station")
             {
-                //TODO make station
-                //trackManager.MakeStation(socket);
+                trackManager.MakeStation(socket);
             }
             else
             {

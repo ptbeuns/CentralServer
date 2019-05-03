@@ -31,5 +31,29 @@ namespace CentralServer
                 //TODO:
             }
         }
+
+        public List<string> GetMessages()
+        {
+            List<string> messages = new List<string>();
+            foreach (Train s in trains)
+            {
+                s.Connection.ReceiveMessage();
+                if (s.Connection.Message != null)
+                {
+                    messages.Add(s.Connection.Message);
+                }
+            }
+            return messages;
+        }
+
+        public Train GetTrain(int rideNumber)
+        {
+            return null;
+        }
+
+        public void UpdateTrain(int rideNumber, List<int> occupation)
+        {
+
+        }
     }
 }

@@ -21,7 +21,7 @@ Train(connection : Connection)</panel_attributes>
     <coordinates>
       <x>1050</x>
       <y>570</y>
-      <w>70</w>
+      <w>80</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>Trains
@@ -43,7 +43,7 @@ Message : string
 --
 Connection(socket : socket)
 ReceiveMessage() : void
-SendMessage(message : string) : void</panel_attributes>
+SendMessage(msg : string) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -51,7 +51,7 @@ SendMessage(message : string) : void</panel_attributes>
     <coordinates>
       <x>950</x>
       <y>720</y>
-      <w>100</w>
+      <w>110</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>Connection
@@ -63,7 +63,7 @@ lt=&lt;-</panel_attributes>
     <coordinates>
       <x>710</x>
       <y>740</y>
-      <w>100</w>
+      <w>110</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>Connection
@@ -75,7 +75,7 @@ lt=&lt;-</panel_attributes>
     <coordinates>
       <x>590</x>
       <y>570</y>
-      <w>80</w>
+      <w>100</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>Stations
@@ -143,9 +143,9 @@ m1=*</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1200</x>
+      <x>1190</x>
       <y>680</y>
-      <w>100</w>
+      <w>120</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>IComparable</panel_attributes>
@@ -218,8 +218,6 @@ AcceptClient() : Socket</panel_attributes>
 TrackManager()
 MakeStation(socket : Socket) : void
 GetMessages() : List&lt;string&gt;
-SendTrain(train : Train) : void
-UpdateStations() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -228,7 +226,7 @@ UpdateStations() : void
     <coordinates>
       <x>900</x>
       <y>460</y>
-      <w>310</w>
+      <w>530</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>TrainManager
@@ -238,7 +236,7 @@ TrainManager()
 MakeTrain(socket : Socket) : void
 GetMessages() : List&lt;string&gt;
 GetTrain(rideNumber : int) : Train
-UpdateTrains() : void
+UpdateTrain(rideNumber : int, occupation : List&lt;int&gt;) : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -247,7 +245,7 @@ UpdateTrains() : void
     <coordinates>
       <x>920</x>
       <y>380</y>
-      <w>120</w>
+      <w>130</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>TrainManager
@@ -259,7 +257,7 @@ lt=&lt;-</panel_attributes>
     <coordinates>
       <x>700</x>
       <y>380</y>
-      <w>120</w>
+      <w>130</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>TrackManager

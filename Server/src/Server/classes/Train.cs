@@ -7,7 +7,7 @@ namespace CentralServer
 {
     public class Train
     {
-        private Connection Connection;
+        public Connection Connection;
         private List<Coupe> coupes;
         public int RideNumber { get; private set; }
         public IReadOnlyList<Coupe> Coupes

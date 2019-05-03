@@ -34,8 +34,16 @@ namespace CentralServer
 
         public List<string> GetMessages()
         {
-            //TODO
-            return null;
+            List<string> messages = new List<string>();
+            foreach (Station s in stations)
+            {
+                s.Connection.ReceiveMessage();
+                if (s.Connection.Message != null)
+                {
+                    messages.Add(s.Connection.Message);
+                }
+            }
+            return messages;
         }
     }
 }

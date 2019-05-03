@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace CentralServer
 {
@@ -8,7 +9,7 @@ namespace CentralServer
     {
         private Socket connectionSocket;
         public string Message;
-        
+
 
         public Connection(Socket socket)
         {
@@ -22,12 +23,25 @@ namespace CentralServer
 
         public void ReceiveMessage()
         {
-            //TODO
+            byte[] data = new byte[1024];
+
+            while (connectionSocket.Available > 0)
+            {
+                int bytesRec = connectionSocket.Receive(data);
+                Message += Encoding.ASCII.GetString(data, 0, bytesRec);
+                //TODO implement protocol End and Start chars
+                if (Message.IndexOf("<EOF>") > -1)
+                {
+                    break;
+                }
+            }
         }
 
-        public void SendMessage()
+        public void SendMessage(string msg)
         {
-            //TODO
+            byte[] message = Encoding.ASCII.GetBytes(msg);
+
+            connectionSocket.Send(message);
         }
     }
 }

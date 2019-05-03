@@ -14,7 +14,15 @@ namespace CentralServer
 
         public void SendTrainOccupation(int rideNumber, List<int> occupation)
         {
-            //TODO
+            //TODO make message protocol compliant
+            string message = "";
+            message += rideNumber.ToString();
+            foreach(int o in occupation)
+            {
+                message += ',';
+                message += o.ToString();
+            }
+            Connection.SendMessage(message);
         }
     }
 }

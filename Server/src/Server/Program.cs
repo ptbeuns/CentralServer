@@ -6,7 +6,22 @@ namespace CentralServer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Server server = new Server();
+
+            while(true)
+            {
+                server.AcceptClient();
+
+                foreach (string msg in server.RailwayManager.trainManager.GetMessages())
+                {
+
+                }
+
+                foreach (string msg in server.RailwayManager.trackManager.GetMessages())
+                {
+
+                }
+            }
         }
     }
 }
