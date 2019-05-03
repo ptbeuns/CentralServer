@@ -24,7 +24,7 @@ namespace CentralServer
         {
             try
             {
-                trains.Add(new Train(socket))
+                trains.Add(new Train(socket));
             }
             catch
             {

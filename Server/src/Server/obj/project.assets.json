@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/max/Documents/dotnet/Server/src/Server/CentralServer.csproj",
+      "projectUniqueName": "/home/max/Documents/Git/CentralServer/Server/src/Server/CentralServer.csproj",
       "projectName": "CentralServer",
-      "projectPath": "/home/max/Documents/dotnet/Server/src/Server/CentralServer.csproj",
+      "projectPath": "/home/max/Documents/Git/CentralServer/Server/src/Server/CentralServer.csproj",
       "packagesPath": "/home/max/.nuget/packages/",
-      "outputPath": "/home/max/Documents/dotnet/Server/src/Server/obj/",
+      "outputPath": "/home/max/Documents/Git/CentralServer/Server/src/Server/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

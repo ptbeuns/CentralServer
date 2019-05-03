@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "AsyncIO/0.1.69": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/AsyncIO.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/AsyncIO.dll": {}
-        }
-      },
       "Microsoft.CodeCoverage/15.9.0": {
         "type": "package",
         "compile": {
@@ -1686,9 +1677,6 @@
       "CentralServer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "AsyncIO": "0.1.69"
-        },
         "compile": {
           "bin/placeholder/CentralServer.dll": {}
         },
@@ -1699,23 +1687,6 @@
     }
   },
   "libraries": {
-    "AsyncIO/0.1.69": {
-      "sha512": "xyXJLi+wjy6AtIyWXHXJkPS0gItqVT4lg5w++7bA5YEjugYKdrFMGxCo6KUJ1yYwjriLQJ1g35LDljZs3Q90XQ==",
-      "type": "package",
-      "path": "asyncio/0.1.69",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "asyncio.0.1.69.nupkg.sha512",
-        "asyncio.nuspec",
-        "lib/net40/AsyncIO.dll",
-        "lib/net40/AsyncIO.pdb",
-        "lib/netstandard1.3/AsyncIO.dll",
-        "lib/netstandard1.3/AsyncIO.pdb",
-        "lib/netstandard2.0/AsyncIO.dll",
-        "lib/netstandard2.0/AsyncIO.pdb"
-      ]
-    },
     "Microsoft.CodeCoverage/15.9.0": {
       "sha512": "oherNadUtHKqFQbtdRKXgPvZVWyGkOeS83pFWT864587npS7JIFWIJ/LJV0c25cWNkCytn2S9XGSSkKscnNFAQ==",
       "type": "package",
@@ -5906,11 +5877,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/max/Documents/dotnet/Server/test/ServerTest/ServerTest.csproj",
+      "projectUniqueName": "/home/max/Documents/Git/CentralServer/Server/test/ServerTest/ServerTest.csproj",
       "projectName": "ServerTest",
-      "projectPath": "/home/max/Documents/dotnet/Server/test/ServerTest/ServerTest.csproj",
+      "projectPath": "/home/max/Documents/Git/CentralServer/Server/test/ServerTest/ServerTest.csproj",
       "packagesPath": "/home/max/.nuget/packages/",
-      "outputPath": "/home/max/Documents/dotnet/Server/test/ServerTest/obj/",
+      "outputPath": "/home/max/Documents/Git/CentralServer/Server/test/ServerTest/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -5927,8 +5898,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/home/max/Documents/dotnet/Server/src/Server/CentralServer.csproj": {
-              "projectPath": "/home/max/Documents/dotnet/Server/src/Server/CentralServer.csproj"
+            "/home/max/Documents/Git/CentralServer/Server/src/Server/CentralServer.csproj": {
+              "projectPath": "/home/max/Documents/Git/CentralServer/Server/src/Server/CentralServer.csproj"
             }
           }
         }
