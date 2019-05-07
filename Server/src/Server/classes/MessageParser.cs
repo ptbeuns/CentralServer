@@ -1,3 +1,5 @@
+using System;
+
 namespace CentralServer
 {
     public static class MessageParser
@@ -38,9 +40,9 @@ namespace CentralServer
                     return split[1];
                 }
             }
-            catch
+            catch (ArgumentException e)
             {
-                //TODO
+                Console.WriteLine("Could not get value");
             }
 
             return null;
