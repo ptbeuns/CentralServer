@@ -25,21 +25,21 @@ namespace CentralServer
         {
             byte[] data = new byte[1024];
 
-            while (connectionSocket.Available > 0)
+            if (connectionSocket.Poll(1000, SelectMode.SelectRead))
             {
                 int bytesRec = connectionSocket.Receive(data);
                 Message += Encoding.ASCII.GetString(data, 0, bytesRec);
-                //TODO implement protocol End and Start chars
-                if (Message.IndexOf("<EOF>") > -1)
-                {
-                    break;
-                }
+                Message = MessageParser.Parse(Message);
+            }
+            else
+            {
+                Message = null;
             }
         }
 
         public void SendMessage(string msg)
         {
-            byte[] message = Encoding.ASCII.GetBytes(msg);
+            byte[] message = Encoding.ASCII.GetBytes(MessageParser.Encode(msg));
 
             connectionSocket.Send(message);
         }

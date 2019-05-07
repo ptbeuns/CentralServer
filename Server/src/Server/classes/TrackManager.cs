@@ -20,30 +20,16 @@ namespace CentralServer
             stations = new List<Station>();
         }
 
-        public void MakeStation(Socket socket)
+        public void MakeStation(Connection connection)
         {
             try
             {
-                stations.Add(new Station(socket));
+                stations.Add(new Station(connection));
             }
             catch
             {
                 //TODO:
             }
-        }
-
-        public List<string> GetMessages()
-        {
-            List<string> messages = new List<string>();
-            foreach (Station s in stations)
-            {
-                s.Connection.ReceiveMessage();
-                if (s.Connection.Message != null)
-                {
-                    messages.Add(s.Connection.Message);
-                }
-            }
-            return messages;
         }
     }
 }

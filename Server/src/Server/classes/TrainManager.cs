@@ -20,11 +20,11 @@ namespace CentralServer
             trains = new List<Train>();
         }
 
-        public void MakeTrain(Socket socket)
+        public void MakeTrain(Connection connection)
         {
             try
             {
-                trains.Add(new Train(socket));
+                trains.Add(new Train(connection));
             }
             catch
             {
@@ -32,28 +32,19 @@ namespace CentralServer
             }
         }
 
-        public List<string> GetMessages()
+        public List<Train> GetTrains(int rideNumber)
         {
-            List<string> messages = new List<string>();
-            foreach (Train s in trains)
+            List<Train> rides = new List<Train>();
+
+            foreach(Train t in trains)
             {
-                s.Connection.ReceiveMessage();
-                if (s.Connection.Message != null)
+                if (t.RideNumber == rideNumber)
                 {
-                    messages.Add(s.Connection.Message);
+                    rides.Add(t);
                 }
             }
-            return messages;
-        }
 
-        public Train GetTrain(int rideNumber)
-        {
-            return null;
-        }
-
-        public void UpdateTrain(int rideNumber, List<int> occupation)
-        {
-
+            return rides;
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
+using System.Collections.Generic;
 
 namespace CentralServer
 {
@@ -16,40 +17,33 @@ namespace CentralServer
             trainManager = new TrainManager();
         }
 
-        public void CreateRailwayObject(Socket socket)
+        public bool CreateRailwayObjects(Connection connection)
         {
-            string railwayObjectType = null;
-            if (socket == null)
+            if (connection == null)
             {
-                throw new NullReferenceException("socket");
+                throw new ArgumentNullException("connection");
             }
 
-            byte[] data = new byte[1024];
 
-            while (socket.Available > 0)
-            {
-                int receivedData = socket.Receive(data);
-                railwayObjectType += Encoding.ASCII.GetString(data, 0, receivedData);
-                //TODO: change delimiter
-                if (railwayObjectType.IndexOf("<EOF>") > -1)
-                {
-                    break;
-                }
-            }
+            connection.ReceiveMessage();
 
-            if (railwayObjectType == "Train")
+            if (connection.Message == "CONNECT:TRAIN")
             {
-                trainManager.MakeTrain(socket);
+                trainManager.MakeTrain(connection);
+                return true;
             }
-            else if (railwayObjectType == "Station")
+            else if (connection.Message == "CONNECT:STATION")
             {
-                trackManager.MakeStation(socket);
+                trackManager.MakeStation(connection);
+                return true;
             }
-            else
+            else if(connection.Message != null)
             {
-                return;
+                connection.SendMessage("NACK");
+                return false;
             }
 
+            return false;
         }
-    }
+}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Collections.Generic;
@@ -6,10 +7,15 @@ namespace CentralServer
 {
     public class Station
     {
-        public Connection Connection;
-        public Station(Socket socket)
+        private Connection Connection;
+        public Station(Connection connection)
         {
-            Connection = new Connection(socket);
+            if(connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+            Connection = connection;
+            Connection.SendMessage("ACK");
         }
 
         public void SendTrainOccupation(int rideNumber, List<int> occupation)
@@ -23,6 +29,11 @@ namespace CentralServer
                 message += o.ToString();
             }
             Connection.SendMessage(message);
+        }
+
+        public void UpdateStation()
+        {
+            Connection.ReceiveMessage();
         }
     }
 }

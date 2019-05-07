@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -8,43 +9,64 @@ namespace CentralServer
     {
         public RailwayManager RailwayManager;
         private Socket listnerSocket;
+        private List<Connection> acceptedSockets;
+        public IReadOnlyList<Connection> AcceptedSockets
+        {
+            get => acceptedSockets.AsReadOnly();
+        }
 
         public Server()
         {
-            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipHostInfo.AddressList[0];
-            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 4337);
+            RailwayManager = new RailwayManager();
+            acceptedSockets = new List<Connection>();
 
-            listnerSocket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Any, 4337);
+
+            listnerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
                 listnerSocket.Bind(localEndPoint);
                 listnerSocket.Listen(20);
             }
-            catch
+            catch (SocketException e)
             {
+                Console.WriteLine(e);
             }
         }
 
-        public Socket AcceptClient()
+        public void AcceptClient()
         {
             if (!listnerSocket.IsBound)
             {
-                return null;
+                return;
             }
 
             Socket socket = null;
 
-            try
+            if (listnerSocket.Poll(1000, SelectMode.SelectRead))
             {
-                socket = listnerSocket.Accept();
-            }
-            catch
-            {
+                try
+                {
+                    socket = listnerSocket.Accept();
+                }
+                catch
+                {
+                }
             }
 
-            return socket;
+            if (socket != null)
+            {
+                acceptedSockets.Add(new Connection(socket));
+            }
+        }
+
+        public void RemoveAcceptedConnection(Connection connection)
+        {
+            if (connection != null)
+            {
+                acceptedSockets.Remove(connection);
+            }
         }
     }
 }
