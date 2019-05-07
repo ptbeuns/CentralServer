@@ -104,7 +104,7 @@ namespace CentralServer
                 catch (ObjectDisposedException e)
                 {
                     trackManager.RemoveStation(station);
-                    continue;
+                    return;
                 }
             }
         }
@@ -179,7 +179,7 @@ namespace CentralServer
                 catch (ObjectDisposedException e)
                 {
                     trainManager.RemoveTrain(train);
-                    continue;
+                    return;
                 }
             }
         }
