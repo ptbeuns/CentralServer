@@ -7,10 +7,11 @@ namespace CentralServer
 {
     public class Station
     {
-        private Connection Connection;
+        public Connection Connection;
+        public string stationName { get; set; }
         public Station(Connection connection)
         {
-            if(connection == null)
+            if (connection == null)
             {
                 throw new ArgumentNullException("connection");
             }
@@ -23,17 +24,12 @@ namespace CentralServer
             //TODO make message protocol compliant
             string message = "";
             message += rideNumber.ToString();
-            foreach(int o in occupation)
+            foreach (int o in occupation)
             {
                 message += ',';
                 message += o.ToString();
             }
             Connection.SendMessage(message);
-        }
-
-        public void UpdateStation()
-        {
-            Connection.ReceiveMessage();
         }
     }
 }

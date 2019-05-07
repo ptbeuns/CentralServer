@@ -7,9 +7,9 @@ namespace CentralServer
 {
     public class Train
     {
-        private Connection Connection;
+        public Connection Connection;
         private List<int> occupation;
-        public int RideNumber { get; private set; }
+        public int RideNumber { get; set; }
         public IReadOnlyList<int> Occupation
         {
             get
@@ -30,58 +30,11 @@ namespace CentralServer
             Connection.SendMessage("ACK");
         }
 
-        public void UpdateTrain()
+        public void UpdateOccupation(List<int> newOccupation)
         {
-            Connection.ReceiveMessage();
-
-            if (Connection.Message != null)
+            if (newOccupation != null)
             {
-                if (Connection.Message.Contains("IAM:"))
-                {
-                    string value = MessageParser.GetValue(Connection.Message);
-                    int rideNumber = 0;
-
-                    if (Int32.TryParse(value, out rideNumber))
-                    {
-                        RideNumber = rideNumber;
-                        Connection.SendMessage("ACK");
-                    }
-                    else
-                    {
-                        Connection.SendMessage("NACK");
-                    }
-                }
-                else if (Connection.Message.Contains("OCCUPATION:"))
-                {
-                    string value = MessageParser.GetValue(Connection.Message);
-                    List<int> newOccuaption = new List<int>();
-                    string[] values = value.Split(",");
-
-                    foreach (string val in values)
-                    {
-                        int num = 0;
-                        if (Int32.TryParse(val, out num))
-                        {
-                            newOccuaption.Add(num);
-                        }
-                        else
-                        {
-                            newOccuaption = null;
-                            Connection.SendMessage("NACK");
-                            break;
-                        }
-                    }
-
-                    if (newOccuaption != null)
-                    {
-                        occupation = newOccuaption;
-                        Connection.SendMessage("ACK");
-                    }
-                }
-                else
-                {
-                    Connection.SendMessage("NACK");
-                }
+                occupation = newOccupation;
             }
         }
     }
