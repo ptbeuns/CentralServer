@@ -103,10 +103,9 @@ namespace CentralServer
 
         public void UpdateTrains()
         {
-            train.Connection.ReceiveMessage();
-
             foreach (Train train in trainManager.Trains)
             {
+                train.Connection.ReceiveMessage();
 
                 if (train.Connection.Message != null)
                 {
