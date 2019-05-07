@@ -111,7 +111,7 @@ namespace CentralServer
 
         public void UpdateTrains()
         {
-            foreach (Train train in trainManager.Trains)
+            2 (Train train in trainManager.Trains)
             {
                 try
                 {
