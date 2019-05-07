@@ -47,5 +47,13 @@ namespace CentralServer
 
             return rides;
         }
+
+        public void RemoveTrain(Train train)
+        {
+            if (train != null)
+            {
+                trains.Remove(train);
+            }
+        }
     }
 }

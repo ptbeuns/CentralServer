@@ -15,14 +15,7 @@ namespace CentralServer
             {
                 server.AcceptClient();
 
-                foreach (Connection connection in server.AcceptedConnections)
-                {
-                    if (server.RailwayManager.CreateRailwayObjects(connection))
-                    {
-                        server.RemoveAcceptedConnection(connection);
-                        break;
-                    }
-                }
+                server.ProcessSockets();
 
                 server.RailwayManager.UpdateTrains();
 

@@ -31,5 +31,13 @@ namespace CentralServer
                 //TODO:
             }
         }
+
+        public void RemoveStation(Station station)
+        {
+            if(station != null)
+            {
+                stations.Remove(station);
+            }
+        }
     }
 }

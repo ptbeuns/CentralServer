@@ -42,7 +42,7 @@ namespace CentralServer
             }
             catch (ArgumentException e)
             {
-                Console.WriteLine("Could not get value");
+                Console.WriteLine("Could not get value" + e.Message);
             }
 
             return null;

@@ -25,15 +25,24 @@ namespace CentralServer
         {
             byte[] data = new byte[1024];
 
-            if (connectionSocket.Poll(1000, SelectMode.SelectRead))
+            try
             {
-                int bytesRec = connectionSocket.Receive(data);
-                Message += Encoding.ASCII.GetString(data, 0, bytesRec);
-                Message = MessageParser.Parse(Message);
+                if (connectionSocket.Poll(1000, SelectMode.SelectRead))
+                {
+                    int bytesRec = connectionSocket.Receive(data);
+                    Message += Encoding.ASCII.GetString(data, 0, bytesRec);
+                    Message = MessageParser.Parse(Message);
+                }
+                else
+                {
+                    Message = null;
+                }
             }
-            else
+            catch (SocketException e)
             {
-                Message = null;
+                Console.WriteLine(e.Message);
+                connectionSocket.Close();
+                connectionSocket.Dispose();
             }
         }
 
@@ -41,7 +50,16 @@ namespace CentralServer
         {
             byte[] message = Encoding.ASCII.GetBytes(MessageParser.Encode(msg));
 
-            connectionSocket.Send(message);
+            try
+            {
+                connectionSocket.Send(message);
+            }
+            catch (SocketException e)
+            {
+                Console.WriteLine(e.Message);
+                connectionSocket.Close();
+                connectionSocket.Dispose();
+            }
         }
     }
 }

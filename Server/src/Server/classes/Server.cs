@@ -68,5 +68,17 @@ namespace CentralServer
                 acceptedSockets.Remove(connection);
             }
         }
+
+        public void ProcessSockets()
+        {
+            foreach (Connection connection in AcceptedConnections)
+            {
+                if (RailwayManager.CreateRailwayObjects(connection))
+                {
+                    RemoveAcceptedConnection(connection);
+                    return;
+                }
+            }
+        }
     }
 }
