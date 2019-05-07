@@ -10,7 +10,7 @@ namespace CentralServer
         public RailwayManager RailwayManager;
         private Socket listnerSocket;
         private List<Connection> acceptedSockets;
-        public IReadOnlyList<Connection> AcceptedSockets
+        public IReadOnlyList<Connection> AcceptedConnections
         {
             get => acceptedSockets.AsReadOnly();
         }

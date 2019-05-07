@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -36,7 +37,7 @@ namespace CentralServer
         {
             List<Train> rides = new List<Train>();
 
-            foreach(Train t in trains)
+            foreach (Train t in trains)
             {
                 if (t.RideNumber == rideNumber)
                 {
