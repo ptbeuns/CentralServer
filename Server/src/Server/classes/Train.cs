@@ -10,6 +10,7 @@ namespace CentralServer
         public Connection Connection;
         private List<int> occupation;
         public int RideNumber { get; set; }
+        public int TrainUnitNumber { get; set; }
         public IReadOnlyList<int> Occupation
         {
             get

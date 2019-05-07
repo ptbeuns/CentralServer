@@ -81,12 +81,12 @@ namespace CentralServer
                                 string occupation = "OCCUPATION:";
                                 foreach (Train t in trains)
                                 {
+                                    occupation += "@" + t.TrainUnitNumber;
                                     foreach (int occu in t.Occupation)
                                     {
-                                        occupation += occu.ToString() + ",";
-                                    }
 
-                                    occupation = occupation.Remove(occupation.Length - 1);
+                                        occupation += "," + occu.ToString();
+                                    }
                                 }
                                 station.Connection.SendMessage(occupation);
                             }
@@ -104,7 +104,7 @@ namespace CentralServer
                 catch (ObjectDisposedException e)
                 {
                     trackManager.RemoveStation(station);
-                    return;
+                    continue;
                 }
             }
         }
@@ -140,10 +140,19 @@ namespace CentralServer
                             List<int> newOccuaption = new List<int>();
                             string[] values = value.Split(",");
 
-                            foreach (string val in values)
+                            if(train.TrainUnitNumber == 0)
+                            {
+                                int trainUnitNumber = 0;
+                                if(Int32.TryParse(values[0], out trainUnitNumber))
+                                {
+                                    train.TrainUnitNumber = trainUnitNumber;
+                                }
+                            }
+
+                            for (int i = 1; i < values.Length; i++)
                             {
                                 int num = 0;
-                                if (Int32.TryParse(val, out num))
+                                if (Int32.TryParse(values[i], out num))
                                 {
                                     newOccuaption.Add(num);
                                 }
@@ -170,7 +179,7 @@ namespace CentralServer
                 catch (ObjectDisposedException e)
                 {
                     trainManager.RemoveTrain(train);
-                    return;
+                    continue;
                 }
             }
         }
