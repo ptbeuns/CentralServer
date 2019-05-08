@@ -11,6 +11,8 @@ namespace CentralServer
         {
             Server server = new Server();
 
+            Console.WriteLine("BEUNS central server has been started");
+
             while (true)
             {
                 server.AcceptClient();

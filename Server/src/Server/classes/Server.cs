@@ -58,6 +58,7 @@ namespace CentralServer
             if (socket != null)
             {
                 acceptedSockets.Add(new Connection(socket));
+                Console.WriteLine("A new socket has been accepted");
             }
         }
 
@@ -66,6 +67,7 @@ namespace CentralServer
             if (connection != null)
             {
                 acceptedSockets.Remove(connection);
+                Console.WriteLine("A socket has been removed");
             }
         }
 

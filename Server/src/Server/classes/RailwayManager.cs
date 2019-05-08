@@ -30,11 +30,13 @@ namespace CentralServer
             if (connection.Message == "CONNECT:TRAIN")
             {
                 trainManager.MakeTrain(connection);
+                Console.WriteLine("A socket has registerd itself as a train");
                 return true;
             }
             else if (connection.Message == "CONNECT:STATION")
             {
                 trackManager.MakeStation(connection);
+                Console.WriteLine("A socket has registerd itself as a station");
                 return true;
             }
             else if (connection.Message != null)
@@ -63,6 +65,7 @@ namespace CentralServer
                             if (value != null)
                             {
                                 station.stationName = value;
+                                Console.WriteLine("Station " + value + " has identified itself");
                                 station.Connection.SendMessage("ACK");
                             }
                             else
@@ -88,6 +91,7 @@ namespace CentralServer
                                         occupation += "," + occu.ToString();
                                     }
                                 }
+                                Console.WriteLine("Station " + station.stationName + " has requested ride: " + rideNumber);
                                 station.Connection.SendMessage(occupation);
                             }
                             else
@@ -103,6 +107,7 @@ namespace CentralServer
                 }
                 catch (ObjectDisposedException e)
                 {
+                    Console.WriteLine("Communication to station " + station.stationName + " has been terminated");
                     trackManager.RemoveStation(station);
                     return;
                 }
@@ -127,6 +132,7 @@ namespace CentralServer
                             if (Int32.TryParse(value, out rideNumber))
                             {
                                 train.RideNumber = rideNumber;
+                                Console.WriteLine("Ride " + value + " has identified itself");
                                 train.Connection.SendMessage("ACK");
                             }
                             else
@@ -167,6 +173,7 @@ namespace CentralServer
                             if (newOccuaption != null)
                             {
                                 train.UpdateOccupation(newOccuaption);
+                                Console.WriteLine("Train " + train.TrainUnitNumber + " has updated its occupation of ride " + train.RideNumber);
                                 train.Connection.SendMessage("ACK");
                             }
                         }
@@ -178,6 +185,7 @@ namespace CentralServer
                 }
                 catch (ObjectDisposedException e)
                 {
+                    Console.WriteLine("Communication to train " + train.TrainUnitNumber + " of ride " + train.RideNumber + " has been terminated");
                     trainManager.RemoveTrain(train);
                     return;
                 }
