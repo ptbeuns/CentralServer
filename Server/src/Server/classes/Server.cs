@@ -73,7 +73,15 @@ namespace CentralServer
         {
             foreach (Connection connection in AcceptedConnections)
             {
-                if (RailwayManager.CreateRailwayObjects(connection))
+                try
+                {
+                    if (RailwayManager.CreateRailwayObjects(connection))
+                    {
+                        RemoveAcceptedConnection(connection);
+                        return;
+                    }
+                }
+                catch (ObjectDisposedException e)
                 {
                     RemoveAcceptedConnection(connection);
                     return;
