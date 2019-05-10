@@ -55,5 +55,13 @@ namespace CentralServer
                 trains.Remove(train);
             }
         }
+
+        public void UpdateTrains()
+        {
+            foreach (Train train in trains)
+            {
+                train.Update();
+            }
+        }
     }
 }

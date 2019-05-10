@@ -19,9 +19,7 @@ namespace CentralServer
 
                 server.ProcessSockets();
 
-                server.RailwayManager.UpdateTrains();
-
-                server.RailwayManager.UpdateStations();
+                server.RailwayManager.Update();
             }
         }
     }

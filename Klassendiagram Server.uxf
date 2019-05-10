@@ -4,106 +4,105 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>660</y>
-      <w>260</w>
-      <h>70</h>
+      <x>990</x>
+      <y>620</y>
+      <w>420</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>Train
 --
-RideNumber : int
+RideNumber: int
+TrainUnitNumber: int
+Occupation: List&lt;int&gt;
 --
-Train(connection : Connection)</panel_attributes>
+Train(connection : Connection)
+UpdateOccupation(newOccupation: List&lt;int&gt;): void
+Update(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>570</y>
-      <w>80</w>
+      <x>1110</x>
+      <y>530</y>
+      <w>40</w>
       <h>110</h>
     </coordinates>
-    <panel_attributes>Trains
-lt=&lt;-
+    <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>670</x>
-      <y>810</y>
+      <x>420</x>
+      <y>750</y>
       <w>320</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>Connection
 --
-Message : string
 --
-Connection(socket : socket)
-ReceiveMessage() : void
-SendMessage(msg : string) : void</panel_attributes>
+Connection(socket: Socket)
+ReceiveMessage(): List&lt;Message&gt;
+SendMessage(msg: string): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>950</x>
-      <y>720</y>
-      <w>110</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>Connection
-lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>710</x>
+      <x>730</x>
       <y>740</y>
-      <w>110</w>
-      <h>90</h>
+      <w>310</w>
+      <h>100</h>
     </coordinates>
-    <panel_attributes>Connection
-lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;290.0;80.0;290.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>570</y>
-      <w>100</w>
+      <x>730</x>
+      <y>700</y>
+      <w>140</w>
       <h>110</h>
     </coordinates>
-    <panel_attributes>Stations
-lt=&lt;-
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;120.0;90.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>530</y>
+      <w>40</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>660</y>
-      <w>590</w>
+      <x>620</x>
+      <y>620</y>
+      <w>270</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>Station
 --
-StationId : int
+StationName: string
 --
-Station(connection : Connection)
-SendTrainOccupation(RideNumber : int, occupation : List&lt;int&gt;) : void</panel_attributes>
+Station(connection: Connection)
+Update(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>90</y>
+      <x>410</x>
+      <y>30</y>
       <w>310</w>
       <h>40</h>
     </coordinates>
@@ -115,160 +114,101 @@ SendTrainOccupation(RideNumber : int, occupation : List&lt;int&gt;) : void</pane
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1000</x>
-      <y>810</y>
-      <w>200</w>
-      <h>70</h>
+      <x>810</x>
+      <y>850</y>
+      <w>290</w>
+      <h>130</h>
     </coordinates>
-    <panel_attributes>Coupe
+    <panel_attributes>Message
 --
-CoupeId : int
-CoupeOccupation : int
---</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1090</x>
-      <y>720</y>
-      <w>80</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>Coupes
-lt=&lt;-
-m1=*</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>1190</x>
-      <y>680</y>
-      <w>120</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>IComparable</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1180</x>
-      <y>680</y>
-      <w>80</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>990</x>
-      <y>210</y>
-      <w>120</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Parser
-lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1090</x>
-      <y>200</y>
-      <w>390</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>MessageParser
+Command: string
+Values: string
 --
---
-ParseMessage(message : string) : List&lt;string&gt;</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>690</x>
-      <y>160</y>
-      <w>310</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>Server
---
-mainSocket : socket
---
-Server()
-AcceptClient() : Socket</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>480</x>
-      <y>460</y>
-      <w>310</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>TrackManager
---
---
-TrackManager()
-MakeStation(socket : Socket) : void
-GetMessages() : List&lt;string&gt;
+Message(message: string): string
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>460</y>
-      <w>530</w>
+      <x>410</x>
+      <y>100</y>
+      <w>470</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+--
+Server()
+AcceptClient(): void
+RemoveAcceptedConnection(connection: Connection): void
+ProcessSockets(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>420</y>
+      <w>570</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>StationManager
+--
+--
+StationManager()
+MakeStation(connection: Connection): void
+RemoveStation(station: Station): void
+UpdateStations(): List&lt;(string,int)&gt;
+SendTrainOccupation(stationName: string, occupation: string): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>420</y>
+      <w>340</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>TrainManager
 --
 --
 TrainManager()
-MakeTrain(socket : Socket) : void
-GetMessages() : List&lt;string&gt;
-GetTrain(rideNumber : int) : Train
-UpdateTrain(rideNumber : int, occupation : List&lt;int&gt;) : void
-</panel_attributes>
+MakeTrain(connection: Connection): void
+GetTrains(rideNumber: int): List&lt;Train&gt;
+RemoveTrain(train: Train): void
+UpdateTrains(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>380</y>
-      <w>130</w>
-      <h>100</h>
+      <x>1030</x>
+      <y>360</y>
+      <w>30</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>TrainManager
-lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>380</y>
-      <w>130</w>
-      <h>100</h>
+      <x>870</x>
+      <y>360</y>
+      <w>30</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>TrackManager
-lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>120</y>
+      <x>550</x>
+      <y>60</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -279,29 +219,78 @@ lt=&lt;-</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>320</y>
-      <w>390</w>
-      <h>70</h>
+      <x>750</x>
+      <y>260</y>
+      <w>440</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>RailwayManager
 --
 --
 RailWayManager()
-CreateRailwayObject(socket : Socket) : void
-</panel_attributes>
+CreateRailwayObject(connection : Connection) : bool
+Update(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>850</x>
-      <y>270</y>
-      <w>30</w>
-      <h>70</h>
+      <x>870</x>
+      <y>180</y>
+      <w>70</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>
 lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>50.0;80.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>210</y>
+      <w>180</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>AcceptedSockets
+lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>150.0;540.0;150.0;460.0;10.0;460.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>860</y>
+      <w>270</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>250.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>700</y>
+      <w>40</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>740</y>
+      <w>40</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

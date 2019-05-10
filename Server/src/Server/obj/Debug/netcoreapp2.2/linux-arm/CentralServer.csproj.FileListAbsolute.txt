@@ -1,0 +1,14 @@
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/libhostpolicy.so
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/libhostfxr.so
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/CentralServer
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/CentralServer.deps.json
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/CentralServer.runtimeconfig.json
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/CentralServer.runtimeconfig.dev.json
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/CentralServer.dll
+/home/max/Documents/Git/CentralServer/Server/src/Server/bin/Debug/netcoreapp2.2/linux-arm/CentralServer.pdb
+/home/max/Documents/Git/CentralServer/Server/src/Server/obj/Debug/netcoreapp2.2/linux-arm/CentralServer.csprojAssemblyReference.cache
+/home/max/Documents/Git/CentralServer/Server/src/Server/obj/Debug/netcoreapp2.2/linux-arm/CentralServer.csproj.CoreCompileInputs.cache
+/home/max/Documents/Git/CentralServer/Server/src/Server/obj/Debug/netcoreapp2.2/linux-arm/CentralServer.AssemblyInfoInputs.cache
+/home/max/Documents/Git/CentralServer/Server/src/Server/obj/Debug/netcoreapp2.2/linux-arm/CentralServer.AssemblyInfo.cs
+/home/max/Documents/Git/CentralServer/Server/src/Server/obj/Debug/netcoreapp2.2/linux-arm/CentralServer.dll
+/home/max/Documents/Git/CentralServer/Server/src/Server/obj/Debug/netcoreapp2.2/linux-arm/CentralServer.pdb

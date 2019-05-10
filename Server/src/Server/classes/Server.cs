@@ -86,6 +86,7 @@ namespace CentralServer
                 catch (ObjectDisposedException e)
                 {
                     RemoveAcceptedConnection(connection);
+                    Console.WriteLine(e.Message);
                     return;
                 }
             }
