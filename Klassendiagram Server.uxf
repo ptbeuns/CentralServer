@@ -33,22 +33,6 @@ m1=*</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>420</x>
-      <y>750</y>
-      <w>320</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>Connection
---
---
-Connection(socket: Socket)
-ReceiveMessage(): List&lt;Message&gt;
-SendMessage(msg: string): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>730</x>
@@ -292,5 +276,23 @@ m1=*</panel_attributes>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>750</y>
+      <w>320</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Connection
+--
+--
+Connection(socket: Socket)
+ReceiveMessage(): List&lt;Message&gt;
+SendMessage(msg: string): void
+SendACK(): void
+SendNACK(): void</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

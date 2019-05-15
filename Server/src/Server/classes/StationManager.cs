@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -54,13 +55,27 @@ namespace CentralServer
         public List<(string, int)> UpdateStations()
         {
             List<(string, int)> requests = new List<(string, int)>();
+            List<Station> toRemove = new List<Station>();
 
             foreach (Station station in stations)
             {
-                foreach ((string, int) request in station.Update())
+                try
                 {
-                    requests.Add(request);
+                    foreach ((string, int) request in station.Update())
+                    {
+                        requests.Add(request);
+                    }
                 }
+                catch(ObjectDisposedException e)
+                {
+                    Console.WriteLine(station.StationName + " has closed the connection " + e.Message);
+                    toRemove.Add(station);
+                }
+            }
+
+            foreach(Station delet in toRemove)
+            {
+                RemoveStation(delet);
             }
 
             return requests;

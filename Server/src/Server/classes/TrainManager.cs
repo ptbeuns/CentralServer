@@ -58,9 +58,24 @@ namespace CentralServer
 
         public void UpdateTrains()
         {
+            List<Train> toRemove = new List<Train>();
+
             foreach (Train train in trains)
             {
-                train.Update();
+                try
+                {
+                    train.Update();
+                }
+                catch (ObjectDisposedException e)
+                {
+                    Console.WriteLine(train.RideNumber + " has closed the connection " + e.Message);
+                    toRemove.Add(train);
+                }
+            }
+
+            foreach(Train delet in toRemove)
+            {
+                RemoveTrain(delet);
             }
         }
     }

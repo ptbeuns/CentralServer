@@ -60,7 +60,7 @@ namespace CentralServer
             foreach ((string, int) request in requests)
             {
                 List<Train> trains = trainManager.GetTrains(request.Item2);
-                string msg = "";
+                string msg = "@" + request.Item2;
 
                 foreach (Train train in trains)
                 {
