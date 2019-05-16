@@ -80,7 +80,7 @@ namespace CentralServer
 
         public void SendACK()
         {
-            byte[] message = Encoding.ASCII.GetBytes("&ACK%");
+            byte[] message = Encoding.ASCII.GetBytes("ACK");
 
             try
             {
@@ -96,7 +96,7 @@ namespace CentralServer
 
         public void SendNACK()
         {
-            byte[] message = Encoding.ASCII.GetBytes("&ACK%");
+            byte[] message = Encoding.ASCII.GetBytes("NACK");
 
             try
             {

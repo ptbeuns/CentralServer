@@ -55,7 +55,7 @@ namespace CentralServer
 
         public void SendOccupation(string message)
         {
-            connection.SendMessage("&OCCUPATION:" + message + "%");
+            connection.SendMessage("OCCUPATION:" + message);
         }
     }
 }
