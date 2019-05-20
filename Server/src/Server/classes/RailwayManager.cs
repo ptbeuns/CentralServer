@@ -8,13 +8,13 @@ namespace CentralServer
 {
     public class RailwayManager
     {
-        public StationManager stationManager;
-        public TrainManager trainManager;
+        public StationManager StationManager;
+        public TrainManager TrainManager;
 
         public RailwayManager()
         {
-            stationManager = new StationManager();
-            trainManager = new TrainManager();
+            StationManager = new StationManager();
+            TrainManager = new TrainManager();
         }
 
         public bool CreateRailwayObjects(Connection connection)
@@ -30,14 +30,14 @@ namespace CentralServer
             {
                 if (msg.Command == "CONNECT" && msg.Values == "TRAIN")
                 {
-                    trainManager.MakeTrain(connection);
+                    TrainManager.MakeTrain(connection);
                     connection.SendACK();
                     Console.WriteLine("A socket has registerd itself as a train");
                     return true;
                 }
                 else if (msg.Command == "CONNECT" && msg.Values == "STATION")
                 {
-                    stationManager.MakeStation(connection);
+                    StationManager.MakeStation(connection);
                     connection.SendACK();
                     Console.WriteLine("A socket has registerd itself as a station");
                     return true;
@@ -54,12 +54,12 @@ namespace CentralServer
 
         public void Update()
         {
-            trainManager.UpdateTrains();
-            List<(string, int)> requests = stationManager.UpdateStations();
+            TrainManager.UpdateTrains();
+            List<(string, int)> requests = StationManager.UpdateStations();
 
             foreach ((string, int) request in requests)
             {
-                List<Train> trains = trainManager.GetTrains(request.Item2);
+                List<Train> trains = TrainManager.GetTrains(request.Item2);
                 string msg = "@" + request.Item2;
 
                 foreach (Train train in trains)
@@ -72,7 +72,7 @@ namespace CentralServer
                     }
                 }
 
-                stationManager.SendOccupation(request.Item1, msg);
+                StationManager.SendOccupation(request.Item1, msg);
             }
         }
     }

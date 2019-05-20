@@ -8,13 +8,6 @@ namespace CentralServer
     public class StationManager
     {
         private List<Station> stations;
-        public IReadOnlyList<Station> Stations
-        {
-            get
-            {
-                return stations.AsReadOnly();
-            }
-        }
 
         public StationManager()
         {

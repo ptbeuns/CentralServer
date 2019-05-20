@@ -10,10 +10,6 @@ namespace CentralServer
         public RailwayManager RailwayManager;
         private Socket listnerSocket;
         private List<Connection> acceptedSockets;
-        public IReadOnlyList<Connection> AcceptedConnections
-        {
-            get => acceptedSockets.AsReadOnly();
-        }
 
         public Server()
         {
@@ -73,7 +69,7 @@ namespace CentralServer
 
         public void ProcessSockets()
         {
-            foreach (Connection connection in AcceptedConnections)
+            foreach (Connection connection in acceptedSockets)
             {
                 try
                 {

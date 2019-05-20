@@ -11,11 +11,5 @@ namespace CentralServer
             Command = msg[0];
             Values = msg[1];
         }
-
-        public Message(string command, string values)
-        {
-            Command = command;
-            Values = values;
-        }
     }
 }

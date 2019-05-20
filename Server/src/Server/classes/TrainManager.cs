@@ -8,13 +8,6 @@ namespace CentralServer
     public class TrainManager
     {
         private List<Train> trains;
-        public IReadOnlyList<Train> Trains
-        {
-            get
-            {
-                return trains.AsReadOnly();
-            }
-        }
 
         public TrainManager()
         {
