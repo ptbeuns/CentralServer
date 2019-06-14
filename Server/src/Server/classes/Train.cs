@@ -70,6 +70,7 @@ namespace CentralServer
                         if (Int32.TryParse(values[0], out trainUnit))
                         {
                             TrainUnitNumber = trainUnit;
+                            string occupationstring = "";
 
                             for (int i = 1; i < values.Length; i++)
                             {
@@ -77,9 +78,10 @@ namespace CentralServer
                                 if (Int32.TryParse(values[i], out occupationInt))
                                 {
                                     occu.Add(occupationInt);
+                                    occupationstring += ", " + occupationInt;
                                 }
                             }
-                            Console.WriteLine("Ride " + RideNumber + " has updated its occupation");
+                            Console.WriteLine("Ride " + RideNumber + " has updated its occupation with" + occupationstring);
                             connection.SendACK();
                         }
                         else
